@@ -1,0 +1,19 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.main {
+    flex: 1;
+    background-color: rgba(137, 43, 226, 0.227);
+}
+.main_container {
+    width: 1440px;
+    margin: 0 auto;
+    display: flex;
+}
+.main_content {
+    border: 2px solid red;
+    width: 100%;
+    background-color: white;
+}
