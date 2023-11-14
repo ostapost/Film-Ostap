@@ -3,14 +3,17 @@ import s from "./Header.module.css";
 import { useEffect, useState } from "react";
 import SmallNavigation from "../../smallComponent/smallNavigation";
 import Burger from "../../smallComponent/burger/Burger";
+import { useDispatch, useSelector } from "react-redux";
+import { SetWindowWidth } from "../../store/FilmSlice";
 
 const Header = () => {
+    let dispatch = useDispatch();
+    const { windowWidth } = useSelector((state) => state.movies);
     const [isOpen, setIsOpen] = useState(false);
-    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-    console.log(windowWidth);
+    // const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     useEffect(() => {
         const handleResize = () => {
-            setWindowWidth(window.innerWidth);
+            dispatch(SetWindowWidth(window.innerWidth));
         };
 
         window.addEventListener("resize", handleResize);

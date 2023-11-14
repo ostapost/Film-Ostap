@@ -133,6 +133,9 @@ body {
     background-color: #ffffffa5;
     color: rgb(0, 0, 0);
 }
+footer {
+    height: 500px;
+}
 
 .active > svg {
     color: black;

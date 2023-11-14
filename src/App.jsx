@@ -10,13 +10,25 @@ import PeoplePage from "./page/peoplePage/PeoplePage";
 import SettingsPage from "./page/settingsPage/SettingsPage";
 import SliderPage from "./page/sliderPage/SliderPage";
 import DownLoadPage from "./page/downloadPage/DownLoadPage";
+import MoviesPage from "./page/moviesPage/MoviesPage";
+import { useDispatch, useSelector } from "react-redux";
+import { featchGetMovies } from "./store/FilmSlice";
+import { useEffect } from "react";
 function App() {
+    const { page, windowWidth } = useSelector((store) => store.movies);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(featchGetMovies(page));
+    }, [page]);
+
     return (
         <div className={s.wrapper}>
             <Header />
             <main className={s.main}>
                 <div className={s.main_container}>
-                    <SideBare />
+                    {windowWidth > 851 ? <SideBare /> : ""}
+
                     <div className={s.main_content}>
                         <Routes>
                             <Route
@@ -46,6 +58,10 @@ function App() {
                             <Route
                                 path="download"
                                 element={<DownLoadPage />}
+                            ></Route>{" "}
+                            <Route
+                                path="movies"
+                                element={<MoviesPage />}
                             ></Route>
                         </Routes>
                     </div>

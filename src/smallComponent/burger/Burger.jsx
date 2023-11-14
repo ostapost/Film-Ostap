@@ -9,6 +9,7 @@ import {
     faRectangleXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-router-dom";
+import SideBare from "../side-bare";
 
 const Burger = ({ isOpen, changeFalse }) => {
     return (
@@ -101,6 +102,7 @@ const Burger = ({ isOpen, changeFalse }) => {
                             </NavLink>
                         </div>
                     </div>
+                    <SideBare />
                 </div>
             </div>
         </div>

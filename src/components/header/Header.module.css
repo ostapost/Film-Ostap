@@ -1,8 +1,14 @@
 .header {
-    height: 90px;
+    height: 80px;
     width: 100%;
     border-bottom: 1px solid white;
-    background-color: rgb(169, 81, 169);
+    /* background-color: rgb(169, 81, 169); */
+    background: linear-gradient(
+        3deg,
+        #130b29 9.89%,
+        #e920ff 100%,
+        #5d47a1a2 100%
+    );
 
     position: sticky;
     top: 0px;

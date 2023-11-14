@@ -2,7 +2,7 @@
     margin-top: 45px;
     width: 100px;
     height: 300px;
-    border: 2px solid red;
+    /* border: 2px solid red; */
     position: sticky;
     top: 135px;
 
@@ -43,4 +43,13 @@
 .sidebare_settings {
     color: white;
     font-size: 30px;
+}
+
+@media (max-width: 851px) {
+    .sidebare_container {
+        margin: 0;
+    }
+    .sidebare_list {
+        background: transparent;
+    }
 }
