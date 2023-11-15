@@ -6,6 +6,7 @@ import {
     faMagnifyingGlass,
     faPhotoFilm,
 } from "@fortawesome/free-solid-svg-icons";
+import SearchList from "../searchList/SearchList";
 
 const SmallNavigation = () => {
     return (
@@ -58,6 +59,7 @@ const SmallNavigation = () => {
                     icon={faMagnifyingGlass}
                     bounce
                 />
+                <SearchList />
             </div>
             <div className={s.other_nav_fich}>
                 <div className={s.header_fich_btns}>

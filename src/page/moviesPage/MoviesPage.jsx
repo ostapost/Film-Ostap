@@ -1,9 +1,10 @@
 import { useEffect } from "react";
 import s from "./MoviesPage.module.css";
-import { SetPage, featchGetMovies } from "../../store/FilmSlice";
+import { SetPage } from "../../store/FilmSlice";
 import { useDispatch, useSelector } from "react-redux";
 import Poster from "../../smallComponent/posterFilm/Poster";
 import { Pagination } from "@mui/material";
+import { NavLink } from "react-router-dom";
 
 const MoviesPage = () => {
     const dispatch = useDispatch();
@@ -32,16 +33,18 @@ const MoviesPage = () => {
                 {movies.results && movies.results.length > 0 ? (
                     <ul className={s.movie_container}>
                         {movies.results.map((movie) => (
-                            <li
+                            <NavLink
                                 key={movie.id}
-                                className={s.movie_item}
+                                to={`/movies/${movie.id}`}
                             >
-                                <Poster movie={movie} />
-                            </li>
+                                <li className={s.movie_item}>
+                                    <Poster movie={movie} />
+                                </li>
+                            </NavLink>
                         ))}
                     </ul>
                 ) : (
-                    <p>LOADING</p>
+                    <h1>LOADING</h1>
                 )}
             </div>
             <div className={s.movie_pagination}>

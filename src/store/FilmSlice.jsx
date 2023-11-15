@@ -26,7 +26,7 @@ let moviSlice = createSlice({
         page: 1,
         error: null,
         status: null,
-        windowWidth: null,
+        windowWidth: 1441,
     },
     reducers: {
         NextPage(state, action) {

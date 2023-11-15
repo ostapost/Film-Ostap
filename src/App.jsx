@@ -14,6 +14,7 @@ import MoviesPage from "./page/moviesPage/MoviesPage";
 import { useDispatch, useSelector } from "react-redux";
 import { featchGetMovies } from "./store/FilmSlice";
 import { useEffect } from "react";
+import ProfileFilm from "./page/provileFilmPage/ProfileFilm";
 function App() {
     const { page, windowWidth } = useSelector((store) => store.movies);
     const dispatch = useDispatch();
@@ -62,6 +63,10 @@ function App() {
                             <Route
                                 path="movies"
                                 element={<MoviesPage />}
+                            ></Route>
+                            <Route
+                                path="movies/:id"
+                                element={<ProfileFilm />}
                             ></Route>
                         </Routes>
                     </div>

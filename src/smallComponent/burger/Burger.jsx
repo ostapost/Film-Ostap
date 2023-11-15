@@ -22,11 +22,17 @@ const Burger = ({ isOpen, changeFalse }) => {
                 <div className={s.burger_container}>
                     <div className={s.burger_closes_box}>
                         <div className={s.wrapper_sub_name}>
-                            <img
-                                className={s.header_logo_img}
-                                src="../public/icons8-cinema-96.png"
-                                alt="logo"
-                            />
+                            <NavLink
+                                to="/"
+                                className={s.nav_link}
+                                onClick={changeFalse}
+                            >
+                                <img
+                                    className={s.header_logo_img}
+                                    src="../public/icons8-cinema-96.png"
+                                    alt="logo"
+                                />
+                            </NavLink>
                             <p className={s.sub_name}>Ostap Films</p>
                         </div>
 
@@ -52,7 +58,10 @@ const Burger = ({ isOpen, changeFalse }) => {
                     </div>
                     <nav className={s.navigation}>
                         <ul className={s.nav_list}>
-                            <li className={s.nav_item}>
+                            <li
+                                className={s.nav_item}
+                                onClick={changeFalse}
+                            >
                                 <NavLink
                                     to="/"
                                     className={s.nav_link}
@@ -60,7 +69,10 @@ const Burger = ({ isOpen, changeFalse }) => {
                                     HOME
                                 </NavLink>
                             </li>
-                            <li className={s.nav_item}>
+                            <li
+                                className={s.nav_item}
+                                onClick={changeFalse}
+                            >
                                 <NavLink
                                     to="tv_show"
                                     className={s.nav_link}
@@ -68,7 +80,10 @@ const Burger = ({ isOpen, changeFalse }) => {
                                     GENRES
                                 </NavLink>
                             </li>
-                            <li className={s.nav_item}>
+                            <li
+                                className={s.nav_item}
+                                onClick={changeFalse}
+                            >
                                 <NavLink
                                     to="movies"
                                     className={s.nav_link}
@@ -76,7 +91,10 @@ const Burger = ({ isOpen, changeFalse }) => {
                                     MOVIES
                                 </NavLink>
                             </li>
-                            <li className={s.nav_item}>
+                            <li
+                                className={s.nav_item}
+                                onClick={changeFalse}
+                            >
                                 <NavLink
                                     to="new"
                                     className={s.nav_link}
@@ -88,13 +106,19 @@ const Burger = ({ isOpen, changeFalse }) => {
                     </nav>
                     <div className={s.other_nav_fich}>
                         <div className={s.header_fich_btns}>
-                            <NavLink to="collaction">
+                            <NavLink
+                                to="collaction"
+                                onClick={changeFalse}
+                            >
                                 <FontAwesomeIcon
                                     className={s.fich_collection}
                                     icon={faPhotoFilm}
                                 />
                             </NavLink>
-                            <NavLink to="user">
+                            <NavLink
+                                to="user"
+                                onClick={changeFalse}
+                            >
                                 <FontAwesomeIcon
                                     className={s.fich_user}
                                     icon={faCircleUser}
