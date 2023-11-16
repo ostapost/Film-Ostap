@@ -7,8 +7,23 @@ import {
     faPhotoFilm,
 } from "@fortawesome/free-solid-svg-icons";
 import SearchList from "../searchList/SearchList";
+import { useDispatch, useSelector } from "react-redux";
+import { GetQuerty, SetOpen, featchGetSearch } from "../../store/SearchSlice";
+import { useEffect } from "react";
 
 const SmallNavigation = () => {
+    const dispatch = useDispatch();
+    const { searchList, query } = useSelector((state) => state.search);
+    useEffect(() => {
+        setTimeout(() => {
+            dispatch(featchGetSearch(query));
+        }, 500);
+    }, [query]);
+    const handleClick = () => {
+        setTimeout(() => {
+            dispatch(SetOpen(false));
+        }, 150);
+    };
     return (
         <>
             <nav className={s.navigation}>
@@ -52,6 +67,12 @@ const SmallNavigation = () => {
                     className={s.search_input}
                     type="input"
                     required
+                    value={query}
+                    onInput={(e) => {
+                        dispatch(SetOpen(e.target.value));
+                        dispatch(GetQuerty(e.target.value));
+                    }}
+                    onBlur={handleClick}
                 />
                 <label className={s.search_label}>Search Film</label>
                 <FontAwesomeIcon
@@ -59,7 +80,7 @@ const SmallNavigation = () => {
                     icon={faMagnifyingGlass}
                     bounce
                 />
-                <SearchList />
+                <SearchList searchList={searchList} />
             </div>
             <div className={s.other_nav_fich}>
                 <div className={s.header_fich_btns}>

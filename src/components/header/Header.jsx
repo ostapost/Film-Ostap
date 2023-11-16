@@ -5,11 +5,12 @@ import SmallNavigation from "../../smallComponent/smallNavigation";
 import Burger from "../../smallComponent/burger/Burger";
 import { useDispatch, useSelector } from "react-redux";
 import { SetWindowWidth } from "../../store/FilmSlice";
+import { BurgerSetOpen } from "../../store/SearchSlice";
 
 const Header = () => {
     let dispatch = useDispatch();
     const { windowWidth } = useSelector((state) => state.movies);
-    const [isOpen, setIsOpen] = useState(false);
+    // const [isOpen, setIsOpen] = useState(false);
     // const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     useEffect(() => {
         const handleResize = () => {
@@ -23,9 +24,10 @@ const Header = () => {
         };
     }, []);
 
-    function changeFalse() {
-        setIsOpen(false);
-    }
+    // function changeFalse() {
+    //     setIsOpen(false);
+    // }
+
     return (
         <section className={s.header}>
             <div className={s.header_container}>
@@ -46,12 +48,14 @@ const Header = () => {
                         <SmallNavigation />
                     </>
                 ) : (
-                    <button onClick={() => setIsOpen(true)}>BURGER</button>
+                    <button onClick={() => dispatch(BurgerSetOpen(true))}>
+                        BURGER
+                    </button>
                 )}
             </div>
             <Burger
-                isOpen={isOpen}
-                changeFalse={changeFalse}
+            // isOpen={isOpen}
+            // changeFalse={changeFalse}
             />
         </section>
     );

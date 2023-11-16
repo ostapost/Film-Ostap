@@ -10,22 +10,46 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-router-dom";
 import SideBare from "../side-bare";
+import SearchList from "../searchList/SearchList";
+import { useDispatch, useSelector } from "react-redux";
+import {
+    BurgerSetOpen,
+    GetQuerty,
+    SetOpen,
+    featchGetSearch,
+} from "../../store/SearchSlice";
+import { useEffect } from "react";
 
 const Burger = ({ isOpen, changeFalse }) => {
+    const dispatch = useDispatch();
+    const { searchList, query, burgerOpen } = useSelector(
+        (state) => state.search
+    );
+    console.log(burgerOpen);
+    useEffect(() => {
+        setTimeout(() => {
+            dispatch(featchGetSearch(query));
+        }, 500);
+    }, [query]);
+    const handleClick = () => {
+        setTimeout(() => {
+            dispatch(SetOpen(false));
+        }, 150);
+    };
     return (
         <div>
             <div
-                onClick={changeFalse}
-                className={cn(s.cover, { [s.coverShow]: isOpen })}
+                onClick={() => dispatch(BurgerSetOpen(false))}
+                className={cn(s.cover, { [s.coverShow]: burgerOpen })}
             ></div>
-            <div className={cn(s.mobileBox, { [s.mobileBoxShow]: isOpen })}>
+            <div className={cn(s.mobileBox, { [s.mobileBoxShow]: burgerOpen })}>
                 <div className={s.burger_container}>
                     <div className={s.burger_closes_box}>
                         <div className={s.wrapper_sub_name}>
                             <NavLink
                                 to="/"
                                 className={s.nav_link}
-                                onClick={changeFalse}
+                                onClick={() => dispatch(BurgerSetOpen(false))}
                             >
                                 <img
                                     className={s.header_logo_img}
@@ -37,7 +61,7 @@ const Burger = ({ isOpen, changeFalse }) => {
                         </div>
 
                         <FontAwesomeIcon
-                            onClick={changeFalse}
+                            onClick={() => dispatch(BurgerSetOpen(false))}
                             className={s.burger_closes}
                             icon={faRectangleXmark}
                         />
@@ -48,6 +72,12 @@ const Burger = ({ isOpen, changeFalse }) => {
                             className={s.search_input}
                             type="input"
                             required
+                            value={query}
+                            onInput={(e) => {
+                                dispatch(SetOpen(e.target.value));
+                                dispatch(GetQuerty(e.target.value));
+                            }}
+                            onBlur={handleClick}
                         />
                         <label className={s.search_label}>Search Film</label>
                         <FontAwesomeIcon
@@ -55,12 +85,16 @@ const Burger = ({ isOpen, changeFalse }) => {
                             icon={faMagnifyingGlass}
                             bounce
                         />
+                        <SearchList
+                            // changeFalse={changeFalse}
+                            searchList={searchList}
+                        />
                     </div>
                     <nav className={s.navigation}>
                         <ul className={s.nav_list}>
                             <li
                                 className={s.nav_item}
-                                onClick={changeFalse}
+                                onClick={() => dispatch(BurgerSetOpen(false))}
                             >
                                 <NavLink
                                     to="/"
@@ -71,7 +105,7 @@ const Burger = ({ isOpen, changeFalse }) => {
                             </li>
                             <li
                                 className={s.nav_item}
-                                onClick={changeFalse}
+                                onClick={() => dispatch(BurgerSetOpen(false))}
                             >
                                 <NavLink
                                     to="tv_show"
@@ -82,7 +116,7 @@ const Burger = ({ isOpen, changeFalse }) => {
                             </li>
                             <li
                                 className={s.nav_item}
-                                onClick={changeFalse}
+                                onClick={() => dispatch(BurgerSetOpen(false))}
                             >
                                 <NavLink
                                     to="movies"
@@ -93,7 +127,7 @@ const Burger = ({ isOpen, changeFalse }) => {
                             </li>
                             <li
                                 className={s.nav_item}
-                                onClick={changeFalse}
+                                onClick={() => dispatch(BurgerSetOpen(false))}
                             >
                                 <NavLink
                                     to="new"
@@ -108,7 +142,7 @@ const Burger = ({ isOpen, changeFalse }) => {
                         <div className={s.header_fich_btns}>
                             <NavLink
                                 to="collaction"
-                                onClick={changeFalse}
+                                onClick={() => dispatch(BurgerSetOpen(false))}
                             >
                                 <FontAwesomeIcon
                                     className={s.fich_collection}
@@ -117,7 +151,7 @@ const Burger = ({ isOpen, changeFalse }) => {
                             </NavLink>
                             <NavLink
                                 to="user"
-                                onClick={changeFalse}
+                                onClick={() => dispatch(BurgerSetOpen(false))}
                             >
                                 <FontAwesomeIcon
                                     className={s.fich_user}

@@ -11,7 +11,6 @@ const ProfileFilm = () => {
     useEffect(() => {
         dispatch(featchGetId(id));
     }, [id]);
-    console.log(IdMoviesPerson);
     return (
         <>
             {IdMoviesPerson ? (

@@ -33,6 +33,7 @@
     width: 100%;
 }
 .profile_wrapper_content {
+    width: 100%;
     margin-top: 100px;
     margin-bottom: 100px;
     display: flex;
@@ -90,4 +91,34 @@
 .profile_release_date {
 }
 .profile_runtime {
+}
+
+@media (max-width: 1440px) {
+}
+
+@media (max-width: 1210px) {
+}
+@media (max-width: 1010px) {
+    .profile_wrapper_content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .profile_content {
+        width: 100%;
+        padding: 50px;
+    }
+}
+
+@media (max-width: 851px) {
+}
+@media (max-width: 670px) {
+    .profile_title {
+        font-size: 30px;
+        padding-bottom: 20px;
+    }
+}
+@media (max-width: 410px) {
+    .profile_content {
+        padding: 20px;
+    }
 }
