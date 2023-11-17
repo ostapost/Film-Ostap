@@ -1,5 +1,6 @@
 import s from "./Poster.module.css";
 const Poster = ({ movie }) => {
+    // console.log(movie);
     return (
         <>
             <div className={s.poster_conatiner}>

@@ -19,13 +19,14 @@ import {
     featchGetSearch,
 } from "../../store/SearchSlice";
 import { useEffect } from "react";
+import GenreChoose from "../genreChoose/GenreChoose";
+import { SetGenreOpen } from "../../store/GenrSlice";
 
 const Burger = ({ isOpen, changeFalse }) => {
     const dispatch = useDispatch();
     const { searchList, query, burgerOpen } = useSelector(
         (state) => state.search
     );
-    console.log(burgerOpen);
     useEffect(() => {
         setTimeout(() => {
             dispatch(featchGetSearch(query));
@@ -45,20 +46,20 @@ const Burger = ({ isOpen, changeFalse }) => {
             <div className={cn(s.mobileBox, { [s.mobileBoxShow]: burgerOpen })}>
                 <div className={s.burger_container}>
                     <div className={s.burger_closes_box}>
-                        <div className={s.wrapper_sub_name}>
-                            <NavLink
-                                to="/"
-                                className={s.nav_link}
-                                onClick={() => dispatch(BurgerSetOpen(false))}
-                            >
+                        <NavLink
+                            to="/"
+                            className={s.nav_link}
+                            onClick={() => dispatch(BurgerSetOpen(false))}
+                        >
+                            <div className={s.wrapper_sub_name}>
                                 <img
                                     className={s.header_logo_img}
                                     src="../public/icons8-cinema-96.png"
                                     alt="logo"
                                 />
-                            </NavLink>
-                            <p className={s.sub_name}>Ostap Films</p>
-                        </div>
+                                <p className={s.sub_name}>Ostap Films</p>
+                            </div>
+                        </NavLink>
 
                         <FontAwesomeIcon
                             onClick={() => dispatch(BurgerSetOpen(false))}
@@ -105,14 +106,16 @@ const Burger = ({ isOpen, changeFalse }) => {
                             </li>
                             <li
                                 className={s.nav_item}
-                                onClick={() => dispatch(BurgerSetOpen(false))}
+                                // onClick={() => dispatch(SetGenreOpen(true))}
                             >
-                                <NavLink
-                                    to="tv_show"
+                                <GenreChoose />
+
+                                {/* <NavLink
+                                    to="genre"
                                     className={s.nav_link}
                                 >
                                     GENRES
-                                </NavLink>
+                                </NavLink> */}
                             </li>
                             <li
                                 className={s.nav_item}

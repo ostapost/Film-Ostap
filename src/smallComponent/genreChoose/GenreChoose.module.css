@@ -1,0 +1,110 @@
+.genres_choose_wrapper {
+    position: relative;
+    width: 80px;
+    cursor: pointer;
+}
+.genres_choose_conteiner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.genres_choose_conteiner_arrow {
+    margin-left: 5px;
+}
+.nav_link {
+    color: white;
+    text-decoration: none;
+
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.genres_choose_down_container {
+    margin-top: 20px;
+    width: 760px;
+    height: 0px;
+    background-color: black;
+    overflow: hidden;
+    transition-duration: 0.4s;
+
+    position: absolute;
+    left: 0;
+    top: 50px;
+}
+.genres_choose_down_container_active {
+    height: 400px;
+}
+.genres_choose_list {
+    padding: 20px;
+    height: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.genres_choose_item {
+    cursor: pointer;
+    width: 160px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid;
+}
+
+.genres_choose_item:hover {
+    border: 1px solid purple;
+    transition-duration: 0.4s;
+}
+.genres_choose_item_active {
+    background-color: rgba(221, 0, 255, 0.8);
+}
+.genres_result_box {
+    padding: 10px 0 20px 30px;
+    display: flex;
+}
+
+.genres_result_btn_go {
+    padding: 10px;
+    width: 150px;
+    background-color: green;
+}
+@media (max-width: 1010px) {
+    .genres_choose_down_container {
+        width: 600px;
+    }
+    .genres_choose_down_container_active {
+        height: 600px;
+    }
+}
+@media (max-width: 851px) {
+    .genres_choose_wrapper {
+        width: 100%;
+    }
+    .genres_choose_down_container_active {
+        /* overflow: scroll; */
+        height: 100%;
+        margin-top: 10px;
+        width: 100%;
+        width: 100;
+        left: -104px;
+        top: 32px;
+        position: static;
+    }
+    .genres_choose_list {
+        justify-content: space-between;
+        padding: 5px;
+    }
+
+    .genres_choose_item {
+        width: 125px;
+        margin: 10px 5px 10px 5px;
+    }
+
+    .genres_choose_conteiner {
+        justify-content: center;
+    }
+}
+@media (max-width: 670px) {
+}
+@media (max-width: 410px) {
+}

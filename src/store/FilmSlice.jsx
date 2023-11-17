@@ -22,21 +22,20 @@ let moviSlice = createSlice({
     name: "moviSlice",
     initialState: {
         movies: {},
-        genres: {},
         page: 1,
         error: null,
         status: null,
-        windowWidth: 1441,
+        windowWidth: "",
     },
     reducers: {
-        NextPage(state, action) {
-            state.page = state.page + 1;
-        },
-        PrevPage(state, action) {
-            if (state.page == 1) {
-                return;
-            } else state.page = state.page - 1;
-        },
+        // NextPage(state, action) {
+        //     state.page = state.page + 1;
+        // },
+        // PrevPage(state, action) {
+        //     if (state.page == 1) {
+        //         return;
+        //     } else state.page = state.page - 1;
+        // },
         SetPage(state, action) {
             state.page = action.payload;
         },

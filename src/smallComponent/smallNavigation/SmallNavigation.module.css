@@ -9,7 +9,7 @@
 }
 .nav_item:hover {
     position: relative;
-    transform: scale(1.05);
+    /* transform: scale(1.05); */
     transition: 0.2s ease-in-out;
 }
 .nav_item::before {
@@ -34,6 +34,15 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+}
+
+.nav_genres_conteiner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav_genres_conteiner_arrow {
+    margin-left: 5px;
 }
 
 .search {

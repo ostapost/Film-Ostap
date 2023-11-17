@@ -8,13 +8,13 @@ import SideBare from "./smallComponent/side-bare";
 import s from "./App.module.css";
 import PeoplePage from "./page/peoplePage/PeoplePage";
 import SettingsPage from "./page/settingsPage/SettingsPage";
-import SliderPage from "./page/sliderPage/SliderPage";
 import DownLoadPage from "./page/downloadPage/DownLoadPage";
 import MoviesPage from "./page/moviesPage/MoviesPage";
 import { useDispatch, useSelector } from "react-redux";
 import { featchGetMovies } from "./store/FilmSlice";
 import { useEffect } from "react";
 import ProfileFilm from "./page/provileFilmPage/ProfileFilm";
+import GenrePage from "./page/genrePage";
 function App() {
     const { page, windowWidth } = useSelector((store) => store.movies);
     const dispatch = useDispatch();
@@ -53,8 +53,8 @@ function App() {
                                 element={<SettingsPage />}
                             ></Route>
                             <Route
-                                path="slider"
-                                element={<SliderPage />}
+                                path="genre"
+                                element={<GenrePage />}
                             ></Route>
                             <Route
                                 path="download"

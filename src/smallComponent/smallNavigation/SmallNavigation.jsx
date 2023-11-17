@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import s from "./SmallNavigation.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+    faArrowDownWideShort,
     faCircleUser,
     faMagnifyingGlass,
     faPhotoFilm,
@@ -10,6 +11,7 @@ import SearchList from "../searchList/SearchList";
 import { useDispatch, useSelector } from "react-redux";
 import { GetQuerty, SetOpen, featchGetSearch } from "../../store/SearchSlice";
 import { useEffect } from "react";
+import GenreChoose from "../genreChoose/GenreChoose";
 
 const SmallNavigation = () => {
     const dispatch = useDispatch();
@@ -37,12 +39,7 @@ const SmallNavigation = () => {
                         </NavLink>
                     </li>
                     <li className={s.nav_item}>
-                        <NavLink
-                            to="tv_show"
-                            className={s.nav_link}
-                        >
-                            GENRES
-                        </NavLink>
+                        <GenreChoose />
                     </li>
                     <li className={s.nav_item}>
                         <NavLink

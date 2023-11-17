@@ -6,17 +6,19 @@ import Burger from "../../smallComponent/burger/Burger";
 import { useDispatch, useSelector } from "react-redux";
 import { SetWindowWidth } from "../../store/FilmSlice";
 import { BurgerSetOpen } from "../../store/SearchSlice";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
     let dispatch = useDispatch();
     const { windowWidth } = useSelector((state) => state.movies);
-    // const [isOpen, setIsOpen] = useState(false);
-    // const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    // const handleResize
     useEffect(() => {
         const handleResize = () => {
             dispatch(SetWindowWidth(window.innerWidth));
         };
-
+        handleResize();
         window.addEventListener("resize", handleResize);
 
         return () => {
@@ -24,33 +26,33 @@ const Header = () => {
         };
     }, []);
 
-    // function changeFalse() {
-    //     setIsOpen(false);
-    // }
-
     return (
         <section className={s.header}>
             <div className={s.header_container}>
-                <div className={s.header_logo}>
-                    <img
-                        className={s.header_logo_img}
-                        src="../public/icons8-cinema-96.png"
-                        alt="logo"
-                    />
-                    {windowWidth >= 851 ? (
-                        <></>
-                    ) : (
-                        <p className={s.sub_name}>Ostap Films</p>
-                    )}
-                </div>
+                <NavLink to="/">
+                    <div className={s.header_logo}>
+                        <img
+                            className={s.header_logo_img}
+                            src="../public/icons8-cinema-96.png"
+                            alt="logo"
+                        />
+                        {windowWidth >= 851 ? (
+                            <></>
+                        ) : (
+                            <p className={s.sub_name}>Ostap Films</p>
+                        )}
+                    </div>
+                </NavLink>
                 {windowWidth >= 851 ? (
                     <>
                         <SmallNavigation />
                     </>
                 ) : (
-                    <button onClick={() => dispatch(BurgerSetOpen(true))}>
-                        BURGER
-                    </button>
+                    <FontAwesomeIcon
+                        className={s.header_burger}
+                        icon={faBars}
+                        onClick={() => dispatch(BurgerSetOpen(true))}
+                    />
                 )}
             </div>
             <Burger
