@@ -12,7 +12,6 @@ export let featchGet_ArrOf_Genres = createAsyncThunk(
                 throw new Error("Є проблємка блять з жанрами");
             }
             let data = await res.json();
-            console.log(data);
             return data;
         } catch (error) {
             return rejectWithValue(error.messages);

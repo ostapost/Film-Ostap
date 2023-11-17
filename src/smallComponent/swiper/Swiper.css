@@ -1,0 +1,158 @@
+.swiper_LARGE_container {
+    height: 490px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+.swiper_container {
+    position: relative;
+    width: 100%;
+    height: 420px;
+    display: flex;
+    justify-content: center;
+    /* border: 1px solid rgb(38, 0, 255); */
+}
+
+.swiper_title {
+    position: absolute;
+    left: 60px;
+    top: -10px;
+
+    font-size: 30px;
+    font-weight: 900;
+    color: rgba(0, 0, 0, 0.662);
+}
+.swiper_inner_box {
+    background-color: rgba(137, 43, 226, 0.227);
+    margin-top: 40px;
+    margin-bottom: 20px;
+    border: 1px solid rgb(255, 255, 255);
+    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.789);
+    width: 90%;
+    display: flex;
+    align-items: center;
+}
+.swiper {
+    width: 95%;
+    height: 95%;
+}
+.swiper-wrapper {
+}
+.swiper-slide {
+}
+.swiper_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 1px solid rgb(0, 0, 0);
+}
+.swiper_arrow {
+    font-size: 40px;
+}
+
+.swiper-button-prev1,
+.swiper-button-next1,
+.swiper-button-prev2,
+.swiper-button-next2,
+.swiper-button-prev3,
+.swiper-button-next3 {
+    position: absolute;
+    top: 50% !important;
+
+    color: rgba(0, 0, 0, 0.389) !important;
+}
+.swiper-button-prev1,
+.swiper-button-prev2,
+.swiper-button-prev3 {
+    left: 20px !important;
+}
+
+.swiper-button-next1,
+.swiper-button-next2,
+.swiper-button-next3 {
+    right: 20px !important;
+}
+/* ================================================= */
+.swiper_pagination_container {
+    margin-top: 20px;
+    height: 20px;
+    position: relative;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+}
+.swiper_pagination1,
+.swiper_pagination2,
+.swiper_pagination3 {
+    position: absolute;
+    top: 0px !important;
+    width: 120px !important ;
+    height: 20px !important;
+}
+
+.swiper-pagination-bullet {
+    width: 15px !important; /* Задайте власну ширину крапочки */
+    height: 15px !important; /* Задайте власну висоту крапочки */
+    margin: 0 5px !important; /* Задайте власний відступ між крапочками */
+    background-color: #929292 !important; /* Задайте власний колір фону крапочки */
+    opacity: 0.7 !important; /* Задайте власну прозорість крапочки */
+    /* border: 1px solid black; */
+}
+
+.swiper-pagination-bullet-active {
+    background-color: purple !important; /* Задайте власний колір фону активної крапочки */
+    opacity: 1;
+}
+
+/* ======================================================= */
+.swiper-button-prev:first-child:after {
+    content: none;
+}
+
+.swiper-button-next:last-child:after {
+    content: none;
+}
+
+@media (max-width: 1440px) {
+    .swiper-button-prev1,
+    .swiper-button-prev2,
+    .swiper-button-prev3 {
+        left: 0px !important;
+    }
+
+    .swiper-button-next1,
+    .swiper-button-next2,
+    .swiper-button-next3 {
+        right: 0px !important;
+    }
+    .swiper_container {
+        height: 350px;
+    }
+}
+
+@media (max-width: 1210px) {
+}
+@media (max-width: 1010px) {
+}
+
+@media (max-width: 851px) {
+    .swiper_arrow {
+        display: none;
+    }
+    .swiper_LARGE_container {
+        padding: 10px;
+    }
+    .swiper_inner_box {
+
+        width: 100%;
+    }
+}
+@media (max-width: 670px) {
+@media (max-width: 410px) {
+    .swiper_title{
+        left: 25px;
+        top: -10px;
+    
+    }
+}

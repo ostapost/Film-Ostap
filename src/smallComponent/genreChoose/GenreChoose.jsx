@@ -14,12 +14,10 @@ import { BurgerSetOpen } from "../../store/SearchSlice";
 
 const GenreChoose = () => {
     const { windowWidth } = useSelector((state) => state.movies);
-    console.log(windowWidth);
     const dispatch = useDispatch();
     let { isGenreOpen, genrsResults, choosedGenres, page } = useSelector(
         (state) => state.genre
     );
-    console.log(page);
     useEffect(() => {
         dispatch(featchGet_JUST_Genres());
     }, []);
