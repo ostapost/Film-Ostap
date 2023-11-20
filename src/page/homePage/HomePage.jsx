@@ -7,6 +7,7 @@ import {
     featchGetPopularTV,
 } from "../../store/PopularSlice";
 import { useDispatch, useSelector } from "react-redux";
+import BtnSwitch from "../../smallComponent/btnSwitch/BtnSwitch";
 
 const HomePage = () => {
     const dispatch = useDispatch();
@@ -19,6 +20,9 @@ const HomePage = () => {
     }, [whenArr]);
     return (
         <div className={s.home_container}>
+            <div className={s.home_chenge_popular}>
+                <BtnSwitch />
+            </div>
             <MySwiper
                 popularMovie={popularMovie}
                 num={1}

@@ -7,8 +7,11 @@ import {
     faUsers,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { SetOpen } from "../../store/ForOpenSlice";
+import { useDispatch } from "react-redux";
 
 const SideBare = () => {
+    const dispatch = useDispatch();
     return (
         <div className={s.sidebare_container}>
             <ul className={s.sidebare_list}>
@@ -16,6 +19,9 @@ const SideBare = () => {
                     <NavLink
                         to="people"
                         className={s.sidebare_link}
+                        onClick={() => {
+                            dispatch(SetOpen());
+                        }}
                     >
                         <FontAwesomeIcon
                             className={s.sidebare_people}
@@ -25,6 +31,9 @@ const SideBare = () => {
                 </li>
                 <li className={s.sidebare_item}>
                     <NavLink
+                        onClick={() => {
+                            dispatch(SetOpen());
+                        }}
                         to="slider"
                         className={s.sidebare_link}
                     >
@@ -36,6 +45,9 @@ const SideBare = () => {
                 </li>
                 <li className={s.sidebare_item}>
                     <NavLink
+                        onClick={() => {
+                            dispatch(SetOpen());
+                        }}
                         to="download"
                         className={s.sidebare_link}
                     >
@@ -47,6 +59,9 @@ const SideBare = () => {
                 </li>
                 <li className={s.sidebare_item}>
                     <NavLink
+                        onClick={() => {
+                            dispatch(SetOpen());
+                        }}
                         to="settings"
                         className={s.sidebare_link}
                     >

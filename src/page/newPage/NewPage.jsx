@@ -2,7 +2,7 @@ import s from "./NewPage.module.css";
 
 const NewPage = () => {
     return (
-        <div>
+        <div className={s.new_conatiner}>
             <h1>New</h1>
             <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.

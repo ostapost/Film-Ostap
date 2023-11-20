@@ -15,8 +15,10 @@ import { featchGetMovies } from "./store/FilmSlice";
 import { useEffect } from "react";
 import ProfileFilm from "./page/provileFilmPage/ProfileFilm";
 import GenrePage from "./page/genrePage";
+import Popup from "./components/popup/Popup";
 function App() {
     const { page, windowWidth } = useSelector((store) => store.movies);
+    const { isOpenPopup } = useSelector((store) => store.isOpen);
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -25,6 +27,7 @@ function App() {
 
     return (
         <div className={s.wrapper}>
+            {isOpenPopup && <Popup />}
             <Header />
             <main className={s.main}>
                 <div className={s.main_container}>
@@ -44,22 +47,22 @@ function App() {
                                 path="user"
                                 element={<UserPage />}
                             ></Route>
-                            <Route
+                            {/* <Route
                                 path="people"
                                 element={<PeoplePage />}
                             ></Route>
                             <Route
                                 path="settings"
                                 element={<SettingsPage />}
-                            ></Route>
+                            ></Route> */}
                             <Route
                                 path="genre"
                                 element={<GenrePage />}
                             ></Route>
-                            <Route
+                            {/* <Route
                                 path="download"
                                 element={<DownLoadPage />}
-                            ></Route>{" "}
+                            ></Route> */}
                             <Route
                                 path="movies"
                                 element={<MoviesPage />}

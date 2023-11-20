@@ -12,8 +12,8 @@ import { NavLink } from "react-router-dom";
 
 const Header = () => {
     let dispatch = useDispatch();
+    const { burgerOpen } = useSelector((state) => state.search);
     const { windowWidth } = useSelector((state) => state.movies);
-    // const handleResize
     useEffect(() => {
         const handleResize = () => {
             dispatch(SetWindowWidth(window.innerWidth));
@@ -25,6 +25,9 @@ const Header = () => {
             window.removeEventListener("resize", handleResize);
         };
     }, []);
+    const toggleBurger = () => {
+        document.body.style.overflow = burgerOpen ? "auto" : "hidden";
+    };
 
     return (
         <section className={s.header}>
@@ -51,14 +54,14 @@ const Header = () => {
                     <FontAwesomeIcon
                         className={s.header_burger}
                         icon={faBars}
-                        onClick={() => dispatch(BurgerSetOpen(true))}
+                        onClick={
+                            () => dispatch(BurgerSetOpen(true))
+                            // toggleBurger()
+                        }
                     />
                 )}
             </div>
-            <Burger
-            // isOpen={isOpen}
-            // changeFalse={changeFalse}
-            />
+            <Burger />
         </section>
     );
 };

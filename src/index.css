@@ -131,10 +131,17 @@ table {
 body {
     font-family: "Poppins", sans-serif;
     background-color: #ffffffa5;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
 }
 footer {
-    height: 500px;
+    height: 100px;
+    background: linear-gradient(
+        3deg,
+        #130b29 9.89%,
+        #e920ff 100%,
+        #5d47a1a2 100%
+    );
+    border-top: 1px solid white;
 }
 
 .active > svg {
@@ -145,4 +152,7 @@ footer {
 }
 .main {
     display: flex;
+}
+.MuiPagination-ul li button {
+    color: white; /* ваш колір */
 }

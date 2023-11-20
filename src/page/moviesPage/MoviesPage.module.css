@@ -25,6 +25,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    color: white;
+
+    z-index: 2;
+}
+
+.pagination_text {
+    color: white; /* ваш колір */
 }
 @media (max-width: 1439px) {
     .movie_container {

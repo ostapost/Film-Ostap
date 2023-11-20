@@ -20,11 +20,14 @@ const MoviesPage = () => {
                     onChange={(_, num) => {
                         dispatch(SetPage(num));
                     }}
-                    variant="outlined"
+                    // variant="outlined"
                     shape="rounded"
                     size={windowWidth > 670 ? "large" : "small"}
                     si="true"
                     color="secondary"
+                    // classes={{ text: `${s.pagination_text}` }}
+                    classes={{ text: "pagination-text" }}
+                    // className={s.pagination_text}
                 />
             </div>
             <div>
@@ -52,7 +55,7 @@ const MoviesPage = () => {
                     onChange={(_, num) => {
                         dispatch(SetPage(num));
                     }}
-                    variant="outlined"
+                    // variant="outlined"
                     shape="rounded"
                     size={windowWidth > 670 ? "large" : "small"}
                     si="true"

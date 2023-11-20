@@ -21,7 +21,7 @@
 
     font-size: 30px;
     font-weight: 900;
-    color: rgba(0, 0, 0, 0.662);
+    color: rgb(255, 255, 255);
 }
 .swiper_inner_box {
     background-color: rgba(137, 43, 226, 0.227);
@@ -60,7 +60,7 @@
     position: absolute;
     top: 50% !important;
 
-    color: rgba(0, 0, 0, 0.389) !important;
+    color: rgba(255, 255, 255, 0.389) !important;
 }
 .swiper-button-prev1,
 .swiper-button-prev2,
@@ -95,12 +95,13 @@
     width: 15px !important; /* Задайте власну ширину крапочки */
     height: 15px !important; /* Задайте власну висоту крапочки */
     margin: 0 5px !important; /* Задайте власний відступ між крапочками */
-    background-color: #929292 !important; /* Задайте власний колір фону крапочки */
+    background-color: #ffffff !important; /* Задайте власний колір фону крапочки */
     opacity: 0.7 !important; /* Задайте власну прозорість крапочки */
     /* border: 1px solid black; */
 }
 
 .swiper-pagination-bullet-active {
+    border: 1px solid;
     background-color: purple !important; /* Задайте власний колір фону активної крапочки */
     opacity: 1;
 }
@@ -144,15 +145,14 @@
         padding: 10px;
     }
     .swiper_inner_box {
-
         width: 100%;
     }
 }
 @media (max-width: 670px) {
+}
 @media (max-width: 410px) {
-    .swiper_title{
+    .swiper_title {
         left: 25px;
         top: -10px;
-    
     }
 }

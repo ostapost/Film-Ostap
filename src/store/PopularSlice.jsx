@@ -66,7 +66,13 @@ let PopularSlice = createSlice({
         whenArr: ["day", "week"],
         whoArr: ["movie", "person", "tv"],
     },
-    reducers: {},
+    reducers: {
+        ChangeWhenArr(state, action) {
+            state.whenArr = state.whenArr.reverse();
+            console.log(state.whenArr);
+            console.log(action.payload);
+        },
+    },
     extraReducers: {
         [featchGetPopularMovie.pending]: (state, action) => {
             state.status = "loading";
@@ -85,7 +91,6 @@ let PopularSlice = createSlice({
         },
         [featchGetPopularPerson.fulfilled]: (state, action) => {
             state.status = "resolved";
-            console.log(action.payload);
             state.popularPerson = action.payload.results;
         },
         [featchGetPopularPerson.rejected]: (state, action) => {
@@ -97,7 +102,6 @@ let PopularSlice = createSlice({
         },
         [featchGetPopularTV.fulfilled]: (state, action) => {
             state.status = "resolved";
-            console.log(action.payload);
             state.popularTv = action.payload.results;
         },
         [featchGetPopularTV.rejected]: (state, action) => {
@@ -105,5 +109,5 @@ let PopularSlice = createSlice({
         },
     },
 });
-
+export const { ChangeWhenArr } = PopularSlice.actions;
 export const PopularReducer = PopularSlice.reducer;

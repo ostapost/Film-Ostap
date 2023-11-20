@@ -2,6 +2,15 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    position: relative;
+
+    background: rgb(131, 58, 180);
+    background: linear-gradient(
+        40deg,
+        rgba(131, 58, 180, 1) 6%,
+        rgba(253, 29, 29, 1) 50%,
+        rgba(255, 226, 55, 1) 100%
+    );
 }
 .main {
     padding-top: 60px;
@@ -21,6 +30,8 @@
     width: 90%;
     background-color: white;
     box-shadow: 15px 3px 290px -6px rgba(0, 0, 0, 0.84);
+    background: url(https://i.pinimg.com/474x/e7/a1/2b/e7a12b496de959fdfa23e9b128a85dae.jpg);
+    background-size: 100% 100%;
 }
 
 @media (max-width: 1440px) {

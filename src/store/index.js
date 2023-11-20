@@ -4,6 +4,7 @@ import { idReducer } from "./IdFilmSlice";
 import { SearchReducer } from "./SearchSlice";
 import { GenrReducer } from "./GenrSlice";
 import { PopularReducer } from "./PopularSlice";
+import { ForOpenReducer } from "./ForOpenSlice";
 
 export let store = configureStore({
     reducer: {
@@ -12,5 +13,6 @@ export let store = configureStore({
         search: SearchReducer,
         genre: GenrReducer,
         popular: PopularReducer,
+        isOpen: ForOpenReducer,
     },
 });

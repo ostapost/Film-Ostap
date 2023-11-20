@@ -27,6 +27,7 @@ const Burger = ({ isOpen, changeFalse }) => {
     const { searchList, query, burgerOpen } = useSelector(
         (state) => state.search
     );
+
     useEffect(() => {
         setTimeout(() => {
             dispatch(featchGetSearch(query));

@@ -1,4 +1,6 @@
 .home_container {
-    margin-top: 50px;
+    margin-top: 100px;
     margin-bottom: 100px;
+    position: relative;
+    border-top: 2px solid rgba(255, 255, 255, 0.374);
 }
