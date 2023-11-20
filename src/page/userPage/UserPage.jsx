@@ -18,6 +18,9 @@ const UserPage = () => {
             <div className={s.user_content}>
                 <p className={s.user_regestration}>Вхід / Реєстрація</p>
                 <form
+                    name="ostap"
+                    netlify-honeypot="bot-field"
+                    netlify
                     className={s.user_form}
                     onSubmit={handleSubmit(onSubmit)}
                 >
@@ -43,12 +46,12 @@ const UserPage = () => {
 
                     <label className={s.user_label}>
                         <div className={s.user_label_container}>
-                            <p className={s.user_name}>SecondtName :</p>
+                            <p className={s.user_name}>Email :</p>
                             <input
                                 className={s.user_input}
-                                type="text"
-                                {...register("SecondtName", {
-                                    required: "Заповніть поле SecondtName ",
+                                type="email"
+                                {...register("Email", {
+                                    required: "Заповніть поле Email ",
                                     minLength: {
                                         value: 5,
                                         message: "Мінімум 5 букв",
