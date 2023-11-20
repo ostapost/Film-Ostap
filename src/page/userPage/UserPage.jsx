@@ -18,6 +18,7 @@ const UserPage = () => {
             <div className={s.user_content}>
                 <p className={s.user_regestration}>Вхід / Реєстрація</p>
                 <form
+                    method="POST"
                     name="ostap"
                     netlify-honeypot="bot-field"
                     netlify
