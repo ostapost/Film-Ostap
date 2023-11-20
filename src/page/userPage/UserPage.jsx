@@ -29,6 +29,7 @@ const UserPage = () => {
                         <div className={s.user_label_container}>
                             <p className={s.user_name}>FirstName :</p>
                             <input
+                                name="FirstName"
                                 className={s.user_input}
                                 type="text"
                                 {...register("FirstName", {
@@ -51,6 +52,7 @@ const UserPage = () => {
                             <input
                                 className={s.user_input}
                                 type="email"
+                                name="email"
                                 {...register("Email", {
                                     required: "Заповніть поле Email ",
                                     minLength: {
@@ -71,6 +73,7 @@ const UserPage = () => {
                             <input
                                 className={s.user_input}
                                 type="password"
+                                name="password"
                                 required
                                 {...register("Password", {
                                     required: "Заповніть поле Password ",
