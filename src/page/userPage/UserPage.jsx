@@ -18,10 +18,10 @@ const UserPage = () => {
             <div className={s.user_content}>
                 <p className={s.user_regestration}>Вхід / Реєстрація</p>
                 <form
-                    method="POST"
                     name="ostap"
+                    method="post"
                     netlify-honeypot="bot-field"
-                    netlify
+                    data-netlify="true"
                     className={s.user_form}
                     onSubmit={handleSubmit(onSubmit)}
                 >
