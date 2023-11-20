@@ -20,8 +20,8 @@ const UserPage = () => {
                 <form
                     name="ostap"
                     method="post"
-                    netlify-honeypot="bot-field"
-                    data-netlify="true"
+                    // netlify-honeypot="bot-field"
+                    // data-netlify="true"
                     className={s.user_form}
                     onSubmit={handleSubmit(onSubmit)}
                 >
