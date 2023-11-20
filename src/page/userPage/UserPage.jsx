@@ -53,7 +53,7 @@ const UserPage = () => {
                                 className={s.user_input}
                                 type="email"
                                 name="email"
-                                {...register("Email", {
+                                {...register("email", {
                                     required: "Заповніть поле Email ",
                                     minLength: {
                                         value: 5,
