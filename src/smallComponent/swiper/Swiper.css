@@ -155,4 +155,10 @@
         left: 25px;
         top: -10px;
     }
+    .swiper-slide {
+        width: 180px;
+    }
+    .swiper_inner_box {
+        /* width: 80%; */
+    }
 }
