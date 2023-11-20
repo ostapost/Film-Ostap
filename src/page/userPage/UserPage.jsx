@@ -25,6 +25,11 @@ const UserPage = () => {
                     className={s.user_form}
                     onSubmit={handleSubmit(onSubmit)}
                 >
+                    <input
+                        type="hidden"
+                        name="form-name"
+                        value="ostap"
+                    />
                     <label className={s.user_label}>
                         <div className={s.user_label_container}>
                             <p className={s.user_name}>FirstName :</p>
